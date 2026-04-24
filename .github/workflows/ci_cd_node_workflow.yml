@@ -1,0 +1,19 @@
+name: Node.js CI/CD
+
+on:
+  push:
+    branches:
+      - main
+        
+  workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Run a test command
+            run: echo "CI is working"
