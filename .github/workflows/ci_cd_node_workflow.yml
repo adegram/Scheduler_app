@@ -53,8 +53,8 @@ jobs:
           context: . # Specify the build context (e.g., the directory containing the Dockerfile)
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }} /adehorizon/scheduler-app:v2
-            ${{ secrets.DOCKER_USERNAME }} /adehorizon/scheduler-app:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/scheduler-app:v2
+            ${{ secrets.DOCKER_USERNAME }}/scheduler-app:${{ github.sha }}
 
 
 
