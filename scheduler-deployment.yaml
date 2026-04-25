@@ -5,7 +5,7 @@ metadata:
   labels:
     app: scheduler
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: scheduler
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: scheduler-app
-        image: adehorizon/scheduler-app:v2
+        image: adehorizon/scheduler-app:v2.1
         ports:
         - containerPort: 4045
 
@@ -30,9 +30,8 @@ metadata:
 spec:
   selector:
     app: scheduler
-  type: NodePort
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80
       targetPort: 4045
-      nodePort: 30300

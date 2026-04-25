@@ -53,9 +53,8 @@ jobs:
           context: . # Specify the build context (e.g., the directory containing the Dockerfile)
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/scheduler-app:v2
+            ${{ secrets.DOCKER_USERNAME }}/scheduler-app:v2.1
             ${{ secrets.DOCKER_USERNAME }}/scheduler-app:${{ github.sha }}
-
 
 
   deploy-AWS-eks:
@@ -88,6 +87,3 @@ jobs:
 
       - name: Verify deployment  
         run: kubectl get deployments
-
-      # - name: Monitor & log
-      #   run: kubectl logs -l app=scheduler
