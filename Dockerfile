@@ -3,7 +3,7 @@ FROM node:20-alpine AS deps
 
 WORKDIR /app
 
-COPY package.json ./
+COPY app/package.json ./
 RUN npm install --omit=dev
 
 # ── Stage 2: final image ─────────────────────────────────────────────────────
@@ -16,9 +16,9 @@ WORKDIR /app
 
 # Copy deps and source and assign ownership to the non-root user
 COPY --chown=appuser:appgroup --from=deps /app/node_modules ./node_modules
-COPY --chown=appuser:appgroup server.js ./
-COPY --chown=appuser:appgroup public ./public
-COPY --chown=appuser:appgroup package.json ./
+COPY --chown=appuser:appgroup app/server.js ./
+COPY --chown=appuser:appgroup app/public ./public
+COPY --chown=appuser:appgroup app/package.json ./
 
 USER appuser
 
