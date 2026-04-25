@@ -89,5 +89,5 @@ jobs:
       - name: Verify deployment  
         run: kubectl get deployments
 
-      - name: Monitor & log
-        run: kubectl logs -l app=scheduler
+      # - name: Monitor & log
+      #   run: kubectl logs -l app=scheduler
