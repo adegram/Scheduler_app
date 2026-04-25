@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: taskboard-deployment
+  name: scheduler-deployment
   labels:
-    app: taskboard
+    app: scheduler
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: taskboard
+      app: scheduler
   template:
     metadata:
       labels:
-        app: taskboard
+        app: scheduler
     spec:
       containers:
-      - name: app-taskboard
-        image: taskboard-app:1.0
+      - name: scheduler-app
+        image: Scheduler-app:latest
         ports:
         - containerPort: 4045
 
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: taskboard-service
+  name: scheduler-service
 spec:
   selector:
-    app: taskboard
+    app: scheduler
   type: NodePort
   ports:
     - protocol: TCP
