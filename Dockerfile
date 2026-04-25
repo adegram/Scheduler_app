@@ -6,7 +6,7 @@ WORKDIR /app
 COPY app/package.json ./
 RUN npm install --omit=dev
 
-# ── Stage 2: final image ─────────────────────────────────────────────────────
+# ── Stage 2: final image 
 FROM node:20-alpine AS runner
 
 # Non-root user for security
