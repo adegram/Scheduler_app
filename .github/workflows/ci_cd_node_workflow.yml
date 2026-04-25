@@ -77,7 +77,7 @@ jobs:
 
       - name: Authenticate to EKS cluster (update kubeconfig)
         run: |
-          aws eks update-kubeconfig --region us-east-1 --name node-app-prod-us-east 
+          aws eks update-kubeconfig --region us-east-1 --name e-node-app-prod-us-east 
 
       - name: Verify kubectl access
         run: kubectl get nodes
