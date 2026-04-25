@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: scheduler-app
-        image: Scheduler-app:latest
+        image: scheduler-app:latest
         ports:
         - containerPort: 4045
 
