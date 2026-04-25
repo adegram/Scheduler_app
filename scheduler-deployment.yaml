@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: scheduler-app
-        image: scheduler-app:v2
+        image: adehorizon/scheduler-app:v2
         ports:
         - containerPort: 4045
 
